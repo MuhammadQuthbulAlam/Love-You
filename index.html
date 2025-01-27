@@ -43,7 +43,7 @@
 	  	}
 	  	body{
 	  		overflow: hidden;
-	  		background-image: url();
+	  		background-image: url("img/wp1.jpg");
 	  		background-size: 100%;
 	  		margin: 0;
 	  		padding: 0;
@@ -88,6 +88,7 @@
 			backdrop-filter: blur(7px);
 		}
 	  	.mywindow{
+			display: flexbox;
 	  		background: #ECECEC;
 	  		position: absolute;
 	  		left: calc(50% - 250px);
@@ -407,6 +408,11 @@
 	  	.kanan{
 	  		right: 0;
 	  	}
+		@media screen and (max-width: 768px) {
+			.mywindow {
+				width: 250px;
+			}
+		}
 	  </style>
 	</head>
 	<body onload="init()">
@@ -427,7 +433,7 @@
 				</video>
 			</div>
 		</div>
-		<img src="wp2.jpg">
+		<img src="img/wp2.jpg">
 		<div class="container">
 			<div class="myclock">
 				<div class="myakun" id="nama">
@@ -440,8 +446,8 @@
 					<div class="tanggal">-</div>
 					<div class="ucapan myoverlay" onclick="carigoogle()"><span id="spannama2"></span></div>	
 				</div>
-				<div class="shortcut kanan" onclick="toggleFullscreen()">fullscreen</div>
-				<div class="shortcut kiri" onclick="wpblur()">blur</div>
+				<div class="shortcut kanan" onclick="toggleFullscreen()">Fullscreen</div>
+				<div class="shortcut kiri" onclick="wpblur()">Blur</div>
 			</div>
 			<div class="mywindow" id="myform" style="width: 500px; height: 240px">
 				<div class="myheader">
@@ -468,14 +474,14 @@
 					<div class="mymax"></div>
 				</div>
 				<div class="myheader" id="mywindowheader">
-					halo <span id="spannama"></span>
+					Hallo <span id="spannama"></span>
 				</div>
 				<div class="mybody">
 					<div class="mytitle">
 						Aku sudah sejak lama suka padamu.
 					</div>
 					<div class="mycontent">
-						Maukah kau menjadi orang yang selalu ada disisiku, yang selalu ada disaat senang ataupun susah, yang selalu ada sampai akhir hayatku?
+						Maukah kau menjadi orang yang selalu ada di sisiku, yang selalu ada disaat senang ataupun susah, yang selalu ada sampai akhir hayatku?
 					</div>
 					<div class="mybutton">
 						<div class="mybuttonno" onmouseover="move()" onclick="move2()" >tidak</div>
@@ -502,7 +508,7 @@
 	  		function init(){
 	  			startTime();
 	  			stopOpening();
-	  			add='<div class="cc">copyright Andika Sujanadi @2020</div>';
+	  			add='<div class="cc">copyright Mochan Endeavour @2025</div>';
 	  			$('body').append(add);
 	  			if(localStorage.getItem("nama") != null && localStorage.getItem("checked") == "yoi"){
 		  			namaku=localStorage.getItem("nama");
@@ -860,7 +866,7 @@
 			}
 			function mytanggal(){
 				var hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-				var bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'Nopember', 'Desember'];
+				var bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 				var d = new Date();
 				var dayName = hari[d.getDay()];
 				var monthName = bulan[d.getMonth()];
